@@ -5,21 +5,22 @@
 apt-get update
 apt-get upgrade
 
-apt-get install snmpd 
-apt-get install snmp 
-apt-get install mysql-server 
-apt-get install apache2 
-apt-get install libapache2-mod-php5
-apt-get install php5-mysql
-apt-get install php5-cli 
-apt-get install php5-snmp
+apt-get install snmpd -y
+apt-get install snmp -y
+apt-get install mysql-server -y
+apt-get install apache2 -y
+apt-get install libapache2-mod-php5 -y
+apt-get install php5-mysql -y
+apt-get install php5-cli -y
+apt-get install php5-snmp -y
 
-apt-get install cacti
+apt-get install cacti -y
 
 
 
 #minion
 
-apt-get install snmp snmpd
+apt-get install snmp -y
+apt-get install snmpd -y
 
 sed -i 
