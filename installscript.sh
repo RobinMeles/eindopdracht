@@ -22,5 +22,3 @@ apt-get install cacti -y
 
 apt-get install snmp -y
 apt-get install snmpd -y
-
-sed -i 
