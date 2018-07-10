@@ -7,7 +7,7 @@ sudo apt install syslog-ng -y
 
 sudo mv /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK
 
-cat >> /etc/syslog/syslog-ng.conf << EOT 
+cat << EOF >> /etc/syslog/syslog-ng.conf 
 @version: 3.5
 @include "scl.conf"
 @include "`scl-root`/system/tty10.conf"
@@ -30,7 +30,7 @@ cat >> /etc/syslog/syslog-ng.conf << EOT
                         perm(0777)
                         ); };
         log { source(s_local); source(s_network); destination(d_logs); };
-EOT
+EOF
 
 sudo mkdir /var/log/syslog-ng
 sudo touch /var/log/syslog-ng/logs.txt
@@ -43,7 +43,7 @@ sudo systemctl enable syslog-ng
 salt 'Ubu1604-Minion' cmd.run 'sudo apt install syslog-ng -y'
 salt 'Ubu1604-Minion' cmd.run 'sudo mv /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK'
 
-salt 'Ubu1604-Minion' cmd.run 'cat <<EOT >> /etc/syslog/syslog-ng.conf
+salt 'Ubu1604-Minion' cmd.run 'cat << EOF >> /etc/syslog/syslog-ng.conf
 @version: 3.5
 @include "scl.conf"
 @include "`scl-root`/system/tty10.conf"
@@ -51,7 +51,7 @@ source s_local { system(); internal(); };
 destination d_syslog_tcp {
         syslog("10.0.0.4" transport("tcp") port(514)); };
 log { source(s_local);destination(d_syslog_tcp); };
-EOT'
+EOF'
 
 salt 'Ubu1604-Minion' cmd.run 'sudo systemctl start syslog-ng'
 salt 'Ubu1604-Minion' cmd.run 'sudo systemctl enable syslog-ng'
