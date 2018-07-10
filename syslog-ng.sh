@@ -3,7 +3,7 @@
 
 #---MASTER---
 
-sudo apt install syslog-ng -y
+sudo apt-get install syslog-ng -y
 
 sudo mv /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK
 
@@ -40,7 +40,7 @@ sudo systemctl enable syslog-ng
 
 #---MINION---
 
-salt 'Ubu1604-Minion' cmd.run 'sudo apt install syslog-ng -y'
+salt 'Ubu1604-Minion' cmd.run 'sudo apt-get install syslog-ng -y'
 salt 'Ubu1604-Minion' cmd.run 'sudo mv /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK'
 
 salt 'Ubu1604-Minion' cmd.run 'cat << EOF >> /etc/syslog/syslog-ng.conf
