@@ -20,5 +20,5 @@ apt-get install cacti -y
 
 #minion
 
-apt-get install snmp -y
-apt-get install snmpd -y
+salt 'Ubu1604-Minion' cmd.run 'apt-get install snmp -y'
+salt 'Ubu1604-Minion' cmd.run 'apt-get install snmpd -y'
