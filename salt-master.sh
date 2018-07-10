@@ -10,7 +10,7 @@ wget -O - https://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest/SALTSTACK-GPG
 echo deb http://repo.saltstack.com/apt/ubuntu/16.04/amd64/latest xenial main >> /etc/apt/sources.list.d/saltstack.list
 sudo apt-get update
 
-sudo apt-get install salt-master -Y
+sudo apt-get install salt-master -y
 
 sudo systemctl restart salt-master
 
