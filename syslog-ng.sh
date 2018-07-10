@@ -7,7 +7,7 @@ sudo apt-get install syslog-ng -y
 
 sudo mv /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK
 
-cat << EOF >> /etc/syslog/syslog-ng.conf 
+cat << EOF >> /etc/syslog-ng/syslog-ng.conf 
 @version: 3.5
 @include "scl.conf"
 @include "`scl-root`/system/tty10.conf"
@@ -43,7 +43,7 @@ sudo systemctl enable syslog-ng
 salt 'Ubu1604-Minion' cmd.run 'sudo apt-get install syslog-ng -y'
 salt 'Ubu1604-Minion' cmd.run 'sudo mv /etc/syslog-ng/syslog-ng.conf /etc/syslog-ng/syslog-ng.conf.BAK'
 
-salt 'Ubu1604-Minion' cmd.run 'cat << EOF >> /etc/syslog/syslog-ng.conf
+salt 'Ubu1604-Minion' cmd.run 'cat << EOF >> /etc/syslog-ng/syslog-ng.conf
 @version: 3.5
 @include "scl.conf"
 @include "`scl-root`/system/tty10.conf"
