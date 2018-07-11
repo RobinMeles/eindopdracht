@@ -11,6 +11,8 @@ apt purge salt* -y
 apt purge snmp* -y
 apt purge snmpd* -y
 apt purge cacti* -y
+apt purge syslog-ng -y
+apt purge --auto-remove syslog-ng
 rm -r /var/www/html/
 rm -r /etc/php/
 rm -r /var/lib/php/
@@ -20,5 +22,3 @@ rm -r /var/log/salt/
 rm -r /var/cache/salt/
 rm -r /etc/syslog-ng
 
-apt-get purge docker-ce -y
-rm -rf /var/lib/docker
